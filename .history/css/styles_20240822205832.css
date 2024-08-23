@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --cor-primaria: #F55B64;
+    --cor-secundaria: #C2373F;
+    --neutro: #F9F9F9;
+    --preto: #131730;
+    --fonte-titulo: "Krona One", sans-serif;
+    --fonte-texto: 'Numans', sans-serif;
+    --degrade-azul: linear-gradient(180deg, #000000 0%, #26327F 100%);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--degrade-azul);
+    background-repeat: no-repeat;
+    font-size: 1.6rem;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-top: 6.4rem;
+    background-color: var(--neutro);
+    border-radius: 1.6rem 1.6rem 0 0;
+    padding: 5.6rem 5.6rem 1.6rem 5.6rem;
+    width: 44.0rem;
+    
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+    background-color: var(--neutro);
+    border-radius: 0 0 1.6rem 1.6rem;
+    padding: 0 5.6rem 5.6rem 5.6rem;
+    width: 44.0rem;
+}
+
+h1 {
+    align-self: flex-start;
+    font-family: var(--fonte-titulo);
+    font-size: 2.0rem;
+    color: var(--cor-primaria);
+    line-height: 3.3rem;
+}
+
+hr {
+    border: none;
+    border-bottom: .3rem dotted var(--cor-primaria);
+    margin-bottom: 2.4rem;
+    width: 100%;
+}
+
+hr:empty {
+    margin-top: calc(1.6rem * -1);
+}
+
+p {
+    font-family: var(--fonte-texto);
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: left;
+    line-height: 2.4rem;
+}
+
+
+.busca {
+    display: flex;
+    flex-direction: column;
+}
+
+.busca__campo {
+    padding: 1.2rem 1.6rem;
+}

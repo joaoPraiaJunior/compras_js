@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lista de compras">
+    <title>Lista de Compras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat&family=Numans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <header>
+        <img src="./img/bag.png" alt="sacola de compras">
+    </header>
+    <main>
+        <form class="busca">
+            <input class="busca__campo" type="search" name="busca" placeholder="Digite o item que deseja adicionar">
+            <button class="busca__botao">Salvar item</button>
+        </form>
+        <h1>Lista de compras</h1>
+        <hr>
+
+        <ul>
+            <li>
+                <div>
+                    <div>
+                        <input type="checkbox" name="produto" id="racao_de_gato">
+                        <label for="racao_de_gato">Ração de gato</label>
+                    </div>
+                    <div>
+                        <button><img src="./img/delete.svg" alt="Deletar"></button>
+                        <button><img src="./img/edit.svg" alt="Editar"></button>
+                    </div>
+                </div>
+                <p>Segunda-feira (<time datetime="2024-08-22">22/08/2024</time>) às <time>08:30</time></p>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>
