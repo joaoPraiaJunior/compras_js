@@ -5,6 +5,7 @@ const elementos = {
 }
 
 const formCompras = document.querySelector(elementos.formCompras);
+let contadorDeItens = 0;
 
 
-formCompras.addEventListener('submit', adicionarItemDeCompra);
+formCompras.addEventListener('submit', adicionarItemDeCompra(contadorDeItens++));

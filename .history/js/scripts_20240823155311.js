@@ -7,4 +7,6 @@ const elementos = {
 const formCompras = document.querySelector(elementos.formCompras);
 
 
-formCompras.addEventListener('submit', adicionarItemDeCompra);
+formCompras.addEventListener('submit', function(evento) {
+    adicionarItemDeCompra(evento);
+});
