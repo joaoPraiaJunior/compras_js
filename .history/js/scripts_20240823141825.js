@@ -49,7 +49,6 @@ function criarItemDaLista(itemDeCompra) {
     divBotao.classList.add('botao');
     botaoExcluir.classList.add('botao__excluir');
     botaoEditar.classList.add('botao__editar');
-    paragrafoData.classList.add('lista__data');
 
     labelDoCheckbox.setAttribute('for', `item-${contadorDeItens}`);
     labelDoCheckbox.dataset.js = 'label-do-checkbox';
@@ -97,6 +96,17 @@ function alteracaoVisualDoCheckbox(checkboxAlvo, checkboxCustomizadoAlvo) {
         checkboxCustomizadoAlvo.classList.remove('checkbox__customizado--checked');
     }
 }
+
+function dataHora(paragrafoData, data, horas) {
+    data.textContent =  `${new Date().toLocaleDateString()}`;
+    data.setAttribute('datetime', `${new Date().toLocaleDateString("en-CA", {year: 'numeric', month: '2-digit', day: '2-digit'})}`);
+    horas.textContent = `${new Date().toLocaleTimeString("pt-BR", { hour: "numeric", minute: "numeric" })}`;
+    paragrafoData.innerHTML = `${new Date().toLocaleDateString("pt-BR", { weekday: "long" }).charAt(0).toUpperCase()} ${data} às ${horas}`;
+    console.log(paragrafoData);
+
+    return paragrafoData;
+}
+
 function inserirItensComprados(checkboxAlvo, liDaLista) {
 
     if (checkboxAlvo.checked) {
@@ -106,20 +116,8 @@ function inserirItensComprados(checkboxAlvo, liDaLista) {
         listaDeCompras.appendChild(liDaLista);
         liDaLista.classList.remove('lista__item--comprado');
     }
+
 }
-
-function dataHora(paragrafoData, data, horas) {
-    data.textContent =  `${new Date().toLocaleDateString()}`;
-    data.setAttribute('datetime', `${new Date().toLocaleDateString("en-CA", {year: 'numeric', month: '2-digit', day: '2-digit'})}`);
-    horas.textContent = `${new Date().toLocaleTimeString("pt-BR", { hour: "numeric", minute: "numeric" })}`;
-    paragrafoData.textContent = `${new Date().toLocaleDateString("pt-BR", { weekday: "long" }).charAt(0).toUpperCase() + new Date().toLocaleDateString("pt-BR", { weekday: "long" }).slice(1)} `;
-    paragrafoData.appendChild(data);
-    paragrafoData.textContent += ' às ';
-    paragrafoData.appendChild(horas);
-
-    return paragrafoData;
-}
-
 
 function textoCapitalizado(itemDeCompra) {
     const palavras = itemDeCompra.split(' ');
