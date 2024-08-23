@@ -58,7 +58,7 @@ function criarItemDaLista(itemDeCompra, contadorDeItens) {
     botaoEditar.appendChild(iconeEditar);
     liDaLista.appendChild(dataHora(paragrafoData, data, horas));
 
-    checkboxMarcado(labelDoCheckbox, liDaLista, paragrafoData, data, horas);
+    checkboxMarcado(labelDoCheckbox, liDaLista);
     excluirItem(liDaLista, botaoExcluir);
     editarItem(liDaLista, botaoEditar, paragrafoData, data, horas);
 

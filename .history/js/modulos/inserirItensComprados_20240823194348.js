@@ -1,4 +1,4 @@
-import dataHora from "./dataHora.js";
+import dataHora from "./dataHora";
 
 function inserirItensComprados(checkboxAlvo, liDaLista, paragrafoData, data, horas) {
 
