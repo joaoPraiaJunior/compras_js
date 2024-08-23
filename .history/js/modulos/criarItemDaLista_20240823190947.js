@@ -9,7 +9,6 @@ function criarItemDaLista(itemDeCompra, contadorDeItens) {
     const divContainer = document.createElement('div');
     const divListaDeCompras = document.createElement('div');
     const labelDoCheckbox = document.createElement('label');
-    const spanDoLabel = document.createElement('span');
     const inputCheckbox = document.createElement('input');
     const checkBoxCustomizado = document.createElement('span');
     const divBotao = document.createElement('div');
@@ -20,6 +19,7 @@ function criarItemDaLista(itemDeCompra, contadorDeItens) {
     const paragrafoData = document.createElement('p');
     const data = document.createElement('time');
     const horas = document.createElement('time');
+    const dataAtual = dataHora(paragrafoData, data, horas);
 
     liDaLista.classList.add('lista__item');
     divContainer.classList.add('lista__container');
@@ -37,7 +37,6 @@ function criarItemDaLista(itemDeCompra, contadorDeItens) {
     labelDoCheckbox.dataset.js = 'label-do-checkbox';
     inputCheckbox.setAttribute('type', 'checkbox');
     inputCheckbox.dataset.js = 'input-do-checkbox';
-    spanDoLabel.dataset.js = 'span-do-label';
     inputCheckbox.setAttribute('id', `item-${contadorDeItens}`);
     iconeExcluir.setAttribute('src', './img/delete.svg');
     iconeExcluir.setAttribute('alt', 'Botão de excluir item da lista de compras');
@@ -47,8 +46,7 @@ function criarItemDaLista(itemDeCompra, contadorDeItens) {
     liDaLista.appendChild(divContainer);
     divContainer.appendChild(divListaDeCompras);
     divListaDeCompras.appendChild(labelDoCheckbox);
-    spanDoLabel.textContent = `${textoCapitalizado(itemDeCompra)}`;
-    labelDoCheckbox.appendChild(spanDoLabel);
+    labelDoCheckbox.textContent = `${textoCapitalizado(itemDeCompra)}`;
     labelDoCheckbox.appendChild(inputCheckbox);
     labelDoCheckbox.appendChild(checkBoxCustomizado);
     divContainer.appendChild(divBotao);
@@ -56,11 +54,11 @@ function criarItemDaLista(itemDeCompra, contadorDeItens) {
     divBotao.appendChild(botaoEditar);
     botaoExcluir.appendChild(iconeExcluir);
     botaoEditar.appendChild(iconeEditar);
-    liDaLista.appendChild(dataHora(paragrafoData, data, horas));
+    liDaLista.appendChild(dataAtual);
 
-    checkboxMarcado(labelDoCheckbox, liDaLista, paragrafoData, data, horas);
+    checkboxMarcado(labelDoCheckbox, liDaLista);
     excluirItem(liDaLista, botaoExcluir);
-    editarItem(liDaLista, botaoEditar, paragrafoData, data, horas);
+    editarItem(liDaLista, botaoEditar);
 
 
     return liDaLista;

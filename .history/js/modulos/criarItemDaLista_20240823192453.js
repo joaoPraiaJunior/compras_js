@@ -37,7 +37,6 @@ function criarItemDaLista(itemDeCompra, contadorDeItens) {
     labelDoCheckbox.dataset.js = 'label-do-checkbox';
     inputCheckbox.setAttribute('type', 'checkbox');
     inputCheckbox.dataset.js = 'input-do-checkbox';
-    spanDoLabel.dataset.js = 'span-do-label';
     inputCheckbox.setAttribute('id', `item-${contadorDeItens}`);
     iconeExcluir.setAttribute('src', './img/delete.svg');
     iconeExcluir.setAttribute('alt', 'Botão de excluir item da lista de compras');
@@ -58,9 +57,9 @@ function criarItemDaLista(itemDeCompra, contadorDeItens) {
     botaoEditar.appendChild(iconeEditar);
     liDaLista.appendChild(dataHora(paragrafoData, data, horas));
 
-    checkboxMarcado(labelDoCheckbox, liDaLista, paragrafoData, data, horas);
+    checkboxMarcado(labelDoCheckbox, liDaLista);
     excluirItem(liDaLista, botaoExcluir);
-    editarItem(liDaLista, botaoEditar, paragrafoData, data, horas);
+    editarItem(liDaLista, botaoEditar);
 
 
     return liDaLista;

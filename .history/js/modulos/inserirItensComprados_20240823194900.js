@@ -13,12 +13,12 @@ function inserirItensComprados(checkboxAlvo, liDaLista, paragrafoData, data, hor
     if (checkboxAlvo.checked) {
         itensComprados.appendChild(liDaLista);
         liDaLista.classList.add('lista__item--comprado');
+        liDaLista.appendChild(dataHora(paragrafoData, data, horas));
     } else {
         listaDeCompras.appendChild(liDaLista);
         liDaLista.classList.remove('lista__item--comprado');
+        liDaLista.appendChild(dataHora(paragrafoData, data, horas));
     }
-
-    liDaLista.appendChild(dataHora(paragrafoData, data, horas));
 }
 
 export default inserirItensComprados;

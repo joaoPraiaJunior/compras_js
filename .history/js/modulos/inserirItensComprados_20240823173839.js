@@ -1,6 +1,6 @@
-import dataHora from "./dataHora.js";
+import mensagemListaVazia from "./mensagemListaVazia.js";
 
-function inserirItensComprados(checkboxAlvo, liDaLista, paragrafoData, data, horas) {
+function inserirItensComprados(checkboxAlvo, liDaLista) {
 
     const elementos = {
         listaDeCompras: '[data-js="lista-de-compras"]',
@@ -18,7 +18,7 @@ function inserirItensComprados(checkboxAlvo, liDaLista, paragrafoData, data, hor
         liDaLista.classList.remove('lista__item--comprado');
     }
 
-    liDaLista.appendChild(dataHora(paragrafoData, data, horas));
+    mensagemListaVazia(listaDeCompras, itensComprados);
 }
 
 export default inserirItensComprados;
