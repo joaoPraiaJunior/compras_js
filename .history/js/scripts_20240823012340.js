@@ -91,10 +91,14 @@ function checkboxMarcado(labelDoCheckbox) {
 
 function textoCapitalizado(itemDeCompra) {
     const palavras = itemDeCompra.split(' ');
-    
+
+    console.log(palavras);
+
     const palavrasCapitalizadas = palavras.map(function (palavra) {
-        return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
+        return palavra.charAt(0).toUpperCase() + palavra.slice(1);
     });
+
+    console.log(palavrasCapitalizadas);
 
     return palavrasCapitalizadas.join(' ');
 }

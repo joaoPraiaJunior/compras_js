@@ -62,7 +62,7 @@ function criarItemDaLista(itemDeCompra) {
     liDaLista.appendChild(divContainer);
     divContainer.appendChild(divListaDeCompras);
     divListaDeCompras.appendChild(labelDoCheckbox);
-    labelDoCheckbox.textContent = `${textoCapitalizado(itemDeCompra)}`;
+    labelDoCheckbox.textContent = `${itemDeCompra}`;
     labelDoCheckbox.appendChild(inputCheckbox);
     labelDoCheckbox.appendChild(checkBoxCustomizado);
     divContainer.appendChild(divBotao);
@@ -87,16 +87,7 @@ function checkboxMarcado(labelDoCheckbox) {
             checkBoxcustomizadoAlvo.classList.remove('checkbox__customizado--checked');
         }
     });
-}
 
-function textoCapitalizado(itemDeCompra) {
-    const palavras = itemDeCompra.split(' ');
-    
-    const palavrasCapitalizadas = palavras.map(function (palavra) {
-        return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
-    });
-
-    return palavrasCapitalizadas.join(' ');
 }
 
 formCompras.addEventListener('submit', adicionarItemDeCompra);

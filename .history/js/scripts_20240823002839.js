@@ -55,14 +55,12 @@ function criarItemDaLista(itemDeCompra) {
     inputCheckbox.dataset.js = 'input-do-checkbox';
     inputCheckbox.setAttribute('id', `item-${contadorDeItens}`);
     iconeExcluir.setAttribute('src', './img/delete.svg');
-    iconeExcluir.setAttribute('alt', 'Botão de excluir item da lista de compras');
     iconeEditar.setAttribute('src', './img/edit.svg');
-    iconeEditar.setAttribute('alt', 'Botão de editar item da lista de compras');
 
     liDaLista.appendChild(divContainer);
     divContainer.appendChild(divListaDeCompras);
     divListaDeCompras.appendChild(labelDoCheckbox);
-    labelDoCheckbox.textContent = `${textoCapitalizado(itemDeCompra)}`;
+    labelDoCheckbox.textContent = `${itemDeCompra}`;
     labelDoCheckbox.appendChild(inputCheckbox);
     labelDoCheckbox.appendChild(checkBoxCustomizado);
     divContainer.appendChild(divBotao);
@@ -82,21 +80,12 @@ function checkboxMarcado(labelDoCheckbox) {
         const checkBoxcustomizadoAlvo = evento.currentTarget.querySelector(elementos.checkBoxCustomizado);
 
         if (checkboxAlvo.checked) {
-            checkBoxcustomizadoAlvo.classList.add('checkbox__customizado--checked');
+            checkBoxcustomizadoAlvo.classList.add('checked');
         } else {
-            checkBoxcustomizadoAlvo.classList.remove('checkbox__customizado--checked');
+            checkBoxcustomizadoAlvo.classList.remove('checked');
         }
     });
-}
 
-function textoCapitalizado(itemDeCompra) {
-    const palavras = itemDeCompra.split(' ');
-    
-    const palavrasCapitalizadas = palavras.map(function (palavra) {
-        return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
-    });
-
-    return palavrasCapitalizadas.join(' ');
 }
 
 formCompras.addEventListener('submit', adicionarItemDeCompra);

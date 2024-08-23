@@ -114,14 +114,6 @@ p, label {
     width: 100%;
 }
 
-.lista__item {
-    margin-bottom: 1.0rem;
-}
-
-.lista__item:last-child {
-    margin-bottom: 0;
-}
-
 .lista__container {
     display: flex;
     align-items: center;

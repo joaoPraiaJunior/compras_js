@@ -146,6 +146,7 @@ p, label {
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
+    text-transform: capitalize;
     cursor: pointer;
 }
 .checkbox__input {

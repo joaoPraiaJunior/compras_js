@@ -114,14 +114,6 @@ p, label {
     width: 100%;
 }
 
-.lista__item {
-    margin-bottom: 1.0rem;
-}
-
-.lista__item:last-child {
-    margin-bottom: 0;
-}
-
 .lista__container {
     display: flex;
     align-items: center;
@@ -179,11 +171,6 @@ p, label {
     border-top: .2rem solid var(--neutro);
     border-left: .2rem solid var(--neutro);
     transform: rotate(-140deg);
-}
-
-.botao {
-    display: flex;
-    gap: 1.0rem;
 }
 
 .botao__excluir, .botao__editar {

@@ -2,9 +2,6 @@ const elementos = {
     formCompras: '[data-js="form-compras"]',
     inputDoItem: '[data-js="input-do-item"]',
     listaDeCompras: '[data-js="lista-de-compras"]',
-    labelDoCheckbox: '[data-js="label-do-checkbox"]',
-    inputDoCheckbox: '[data-js="input-do-checkbox"]',
-    checkBoxCustomizado: '[data-js="checkbox-customizado"]',
 }
 
 const formCompras = document.querySelector(elementos.formCompras);
@@ -44,25 +41,20 @@ function criarItemDaLista(itemDeCompra) {
     labelDoCheckbox.classList.add('checkbox');
     inputCheckbox.classList.add('checkbox__input');
     checkBoxCustomizado.classList.add('checkbox__customizado');
-    checkBoxCustomizado.dataset.js = 'checkbox-customizado';
     divBotao.classList.add('botao');
     botaoExcluir.classList.add('botao__excluir');
     botaoEditar.classList.add('botao__editar');
 
     labelDoCheckbox.setAttribute('for', `item-${contadorDeItens}`);
-    labelDoCheckbox.dataset.js = 'label-do-checkbox';
     inputCheckbox.setAttribute('type', 'checkbox');
-    inputCheckbox.dataset.js = 'input-do-checkbox';
     inputCheckbox.setAttribute('id', `item-${contadorDeItens}`);
     iconeExcluir.setAttribute('src', './img/delete.svg');
-    iconeExcluir.setAttribute('alt', 'Botão de excluir item da lista de compras');
     iconeEditar.setAttribute('src', './img/edit.svg');
-    iconeEditar.setAttribute('alt', 'Botão de editar item da lista de compras');
 
     liDaLista.appendChild(divContainer);
     divContainer.appendChild(divListaDeCompras);
     divListaDeCompras.appendChild(labelDoCheckbox);
-    labelDoCheckbox.textContent = `${textoCapitalizado(itemDeCompra)}`;
+    labelDoCheckbox.textContent = `${itemDeCompra}`;
     labelDoCheckbox.appendChild(inputCheckbox);
     labelDoCheckbox.appendChild(checkBoxCustomizado);
     divContainer.appendChild(divBotao);
@@ -71,32 +63,13 @@ function criarItemDaLista(itemDeCompra) {
     botaoExcluir.appendChild(iconeExcluir);
     botaoEditar.appendChild(iconeEditar);
 
-    checkboxMarcado(labelDoCheckbox);
+    checkboxMarcado(labelDoCheckbox, inputCheckbox);
 
     return liDaLista;
 }
 
-function checkboxMarcado(labelDoCheckbox) {
-    labelDoCheckbox.addEventListener('click', function (evento) {
-        const checkboxAlvo = evento.currentTarget.querySelector(elementos.inputDoCheckbox);
-        const checkBoxcustomizadoAlvo = evento.currentTarget.querySelector(elementos.checkBoxCustomizado);
+function checkboxMarcado() {
 
-        if (checkboxAlvo.checked) {
-            checkBoxcustomizadoAlvo.classList.add('checkbox__customizado--checked');
-        } else {
-            checkBoxcustomizadoAlvo.classList.remove('checkbox__customizado--checked');
-        }
-    });
-}
-
-function textoCapitalizado(itemDeCompra) {
-    const palavras = itemDeCompra.split(' ');
-    
-    const palavrasCapitalizadas = palavras.map(function (palavra) {
-        return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
-    });
-
-    return palavrasCapitalizadas.join(' ');
 }
 
 formCompras.addEventListener('submit', adicionarItemDeCompra);
