@@ -9,7 +9,7 @@ html {
 }
 
 :root {
-    --cor-primaria: #df1e2b;
+    --cor-primaria: #ca0f1c;
     --cor-secundaria: #C2373F;
     --neutro: #F9F9F9;
     --preto: #131730;
@@ -175,7 +175,6 @@ p, label {
 
 .botao__excluir, .botao__editar {
     background-color: transparent;
-    border: none;
-    cursor: pointer;
+    border: none
 }
 

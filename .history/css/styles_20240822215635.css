@@ -9,7 +9,7 @@ html {
 }
 
 :root {
-    --cor-primaria: #df1e2b;
+    --cor-primaria: #F55B64;
     --cor-secundaria: #C2373F;
     --neutro: #F9F9F9;
     --preto: #131730;
@@ -125,10 +125,6 @@ p, label {
     align-items: center;
 }
 
-.lista__etiqueta {
-    cursor: pointer;
-}
-
 .lista__data {
     font-size: 1.2rem;
     line-height: 2.0rem;
@@ -137,8 +133,6 @@ p, label {
 .checkbox {
     display: flex;
     align-items: center;
-    flex-direction: row-reverse;
-    cursor: pointer;
 }
 .checkbox__input {
     opacity: 0;
@@ -156,26 +150,32 @@ p, label {
     cursor: pointer
 }
 
-.checkbox__input:checked ~ .checked {
+.checked {
     position: relative;
     background-color: var(--preto);
 }
 
-.checked::before {
-    content: "";
+.checked::after {
+    content: '';
     position: absolute;
     top: -10%;
     left: 30%;
+    background-color: var(--neutro);
     width: .5rem;
     height: 1.4rem;
     border-top: .2rem solid var(--neutro);
     border-left: .2rem solid var(--neutro);
     transform: rotate(-140deg);
-}
+} 
 
-.botao__excluir, .botao__editar {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
+/* .checked::after {
+    content: "";
+    position: absolute;
+    left: 30%;
+    top: -10%;
+    width: .5rem;
+    height: 1.4rem;
+    border-top: .2rem solid var(--neutro);
+    border-left: .2rem solid var(--neutro);
+    transform: rotate(-140deg);
+} */

@@ -9,7 +9,7 @@ html {
 }
 
 :root {
-    --cor-primaria: #df1e2b;
+    --cor-primaria: #F55B64;
     --cor-secundaria: #C2373F;
     --neutro: #F9F9F9;
     --preto: #131730;
@@ -137,8 +137,6 @@ p, label {
 .checkbox {
     display: flex;
     align-items: center;
-    flex-direction: row-reverse;
-    cursor: pointer;
 }
 .checkbox__input {
     opacity: 0;
@@ -156,12 +154,12 @@ p, label {
     cursor: pointer
 }
 
-.checkbox__input:checked ~ .checked {
+.checked:checked {
     position: relative;
     background-color: var(--preto);
 }
 
-.checked::before {
+.checked:checked:after {
     content: "";
     position: absolute;
     top: -10%;
@@ -175,7 +173,6 @@ p, label {
 
 .botao__excluir, .botao__editar {
     background-color: transparent;
-    border: none;
-    cursor: pointer;
+    border: none
 }
 

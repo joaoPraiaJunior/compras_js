@@ -175,7 +175,6 @@ p, label {
 
 .botao__excluir, .botao__editar {
     background-color: transparent;
-    border: none;
-    cursor: pointer;
+    border: none
 }
 
