@@ -49,7 +49,7 @@ main {
     width: 44.0rem;
 }
 
-h1, h2 {
+h1 {
     align-self: flex-start;
     font-family: var(--fonte-titulo);
     font-size: 2.0rem;
@@ -66,7 +66,6 @@ hr {
 
 hr:empty {
     margin-top: calc(1.6rem * -1);
-    margin-bottom: 0;
 }
 
 p, label {
@@ -110,21 +109,9 @@ p, label {
     cursor: pointer;
 }
 
-.lista, .comprados {
+.lista {
     list-style: none;
     width: 100%;
-}
-
-.lista__item {
-    margin-bottom: 1.0rem;
-}
-
-.lista__item:last-child {
-    margin-bottom: 0;
-}
-
-.lista__item--comprado {
-    text-decoration: line-through;
 }
 
 .lista__container {
@@ -169,12 +156,12 @@ p, label {
     cursor: pointer
 }
 
-.checkbox__customizado--checked {
+.checked {
     position: relative;
     background-color: var(--preto);
 }
 
-.checkbox__customizado--checked::before {
+.checked::before {
     content: "";
     position: absolute;
     top: -10%;
@@ -184,11 +171,6 @@ p, label {
     border-top: .2rem solid var(--neutro);
     border-left: .2rem solid var(--neutro);
     transform: rotate(-140deg);
-}
-
-.botao {
-    display: flex;
-    gap: 1.0rem;
 }
 
 .botao__excluir, .botao__editar {

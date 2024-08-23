@@ -49,7 +49,6 @@ function criarItemDaLista(itemDeCompra) {
     divBotao.classList.add('botao');
     botaoExcluir.classList.add('botao__excluir');
     botaoEditar.classList.add('botao__editar');
-    paragrafoData.classList.add('lista__data');
 
     labelDoCheckbox.setAttribute('for', `item-${contadorDeItens}`);
     labelDoCheckbox.dataset.js = 'label-do-checkbox';
@@ -97,16 +96,6 @@ function alteracaoVisualDoCheckbox(checkboxAlvo, checkboxCustomizadoAlvo) {
         checkboxCustomizadoAlvo.classList.remove('checkbox__customizado--checked');
     }
 }
-function inserirItensComprados(checkboxAlvo, liDaLista) {
-
-    if (checkboxAlvo.checked) {
-        itensComprados.appendChild(liDaLista);
-        liDaLista.classList.add('lista__item--comprado');
-    } else {
-        listaDeCompras.appendChild(liDaLista);
-        liDaLista.classList.remove('lista__item--comprado');
-    }
-}
 
 function dataHora(paragrafoData, data, horas) {
     data.textContent =  `${new Date().toLocaleDateString()}`;
@@ -120,6 +109,17 @@ function dataHora(paragrafoData, data, horas) {
     return paragrafoData;
 }
 
+function inserirItensComprados(checkboxAlvo, liDaLista) {
+
+    if (checkboxAlvo.checked) {
+        itensComprados.appendChild(liDaLista);
+        liDaLista.classList.add('lista__item--comprado');
+    } else {
+        listaDeCompras.appendChild(liDaLista);
+        liDaLista.classList.remove('lista__item--comprado');
+    }
+
+}
 
 function textoCapitalizado(itemDeCompra) {
     const palavras = itemDeCompra.split(' ');
