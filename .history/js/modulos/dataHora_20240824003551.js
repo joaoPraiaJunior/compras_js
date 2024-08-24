@@ -1,5 +1,4 @@
 function dataHora(paragrafoData, data, horas) {
-    
     data.textContent =  `${new Date().toLocaleDateString()}`;
     data.setAttribute('datetime', `${new Date().toLocaleDateString("en-CA", {year: 'numeric', month: '2-digit', day: '2-digit'})}`);
     horas.textContent = `${new Date().toLocaleTimeString("pt-BR", { hour: "numeric", minute: "numeric" })}`;

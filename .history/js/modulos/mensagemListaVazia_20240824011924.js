@@ -11,7 +11,7 @@ function mensagemListaVazia(listaDeCompras) {
         mensagem.style.display = 'block';
 
     } else {
-
+        debugger
         mensagem.style.display = 'none';
     }
 }

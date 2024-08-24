@@ -5,7 +5,7 @@ function mensagemListaVazia(listaDeCompras) {
     }
 
     const mensagem = document.querySelector(elementos.mensagem);
-
+    debugger
     if (listaDeCompras.childElementCount === 0) {
 
         mensagem.style.display = 'block';

@@ -13,7 +13,7 @@ const excluirItem = (liDaLista, botaoExcluir) => {
         const confirmaExclusao = confirm('Deseja realmente excluir este item da lista?');
 
         if (confirmaExclusao) {
-            liDaLista.remove();
+            listaDeCompras.removeChild(liDaLista);
         }
 
         mensagemListaVazia(listaDeCompras);

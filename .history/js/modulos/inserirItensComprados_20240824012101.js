@@ -11,7 +11,7 @@ function inserirItensComprados(checkboxAlvo, liDaLista, paragrafoData, data, hor
     const listaDeCompras = document.querySelector(elementos.listaDeCompras);
 
     if (checkboxAlvo.checked) {
-
+        debugger
         itensComprados.appendChild(liDaLista);
         liDaLista.classList.add('lista__item--comprado');
 

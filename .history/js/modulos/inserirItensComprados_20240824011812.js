@@ -16,7 +16,7 @@ function inserirItensComprados(checkboxAlvo, liDaLista, paragrafoData, data, hor
         liDaLista.classList.add('lista__item--comprado');
 
     } else {
-
+        
         listaDeCompras.appendChild(liDaLista);
         liDaLista.classList.remove('lista__item--comprado');
     }

@@ -11,10 +11,10 @@ function adicionarItemDeCompra(evento) {
     }
 
     const inputDoItem = document.querySelector(elementos.inputDoItem);
-    const listaDeCompras = document.querySelector(elementos.listaDeCompras);
+    const listaDeCompras = document.getElementsByClassName('lista')[0];
 
     evento.preventDefault();
-    
+
     const itemDeCompra = inputDoItem.value;
     inputDoItem.value = '';
     contadorDeItens++;
